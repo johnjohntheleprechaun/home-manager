@@ -2,11 +2,8 @@
 
 {
     imports = [
-        ./programs/bash.nix
-        ./programs/git.nix
-        ./programs/ssh.nix
-        ./programs/aws.nix
-        ./games/steam.nix
+        ./programs
+        ./games
         ./dconf.nix
         ./pkgs.nix
     ];
