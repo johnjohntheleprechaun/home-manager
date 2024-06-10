@@ -22,6 +22,7 @@
 
         # Games
         prismlauncher
+        steam
 
         # CLI packages
         usbutils
