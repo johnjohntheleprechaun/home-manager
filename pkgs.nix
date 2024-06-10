@@ -20,9 +20,6 @@
         orca-slicer
         godot_4
 
-        # Games
-        prismlauncher
-
         # CLI packages
         usbutils
         zip
