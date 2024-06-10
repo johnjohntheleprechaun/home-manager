@@ -33,8 +33,6 @@
         nodePackages.aws-cdk
         nodePackages.http-server
         awscli2
-        vscode
-        git
         python3
         jdk17
 

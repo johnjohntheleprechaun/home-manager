@@ -5,5 +5,6 @@
         ./aws.nix
         ./bash.nix
         ./git.nix
+        ./vscode
     ];
 }
