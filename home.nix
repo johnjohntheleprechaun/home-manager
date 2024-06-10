@@ -6,6 +6,7 @@
         ./programs/git.nix
         ./programs/ssh.nix
         ./programs/aws.nix
+        ./games/steam.nix
         ./dconf.nix
         ./pkgs.nix
     ];
