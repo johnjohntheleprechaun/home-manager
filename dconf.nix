@@ -26,5 +26,9 @@
             "dash-to-dock@micxgx.gmail.com"
         ];
         "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        "org/gnome/desktop/peripherals/touchpad" = {
+            natural-scroll = false;
+            two-finger-scrolling-enabled = true;
+        };
     };
 }
