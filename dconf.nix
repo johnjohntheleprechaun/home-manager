@@ -25,5 +25,6 @@
             "appindicatorsupport@rgcjonas.gmail.com"
             "dash-to-dock@micxgx.gmail.com"
         ];
+        "org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
 }
