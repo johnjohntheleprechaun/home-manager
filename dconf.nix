@@ -33,6 +33,10 @@
             natural-scroll = false;
             two-finger-scrolling-enabled = true;
         };
-        "org/gnome/mutter".edge-tiling = true;
+        "org/gnome/mutter" = {
+            edge-tiling = true;
+            dynamic-workspaces = true;
+            workspaces-only-on-primary = false;
+        };
     };
 }
