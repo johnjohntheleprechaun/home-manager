@@ -33,5 +33,6 @@
             natural-scroll = false;
             two-finger-scrolling-enabled = true;
         };
+        "org/gnome/mutter".edge-tiling = true;
     };
 }
