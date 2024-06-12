@@ -11,6 +11,7 @@
         gnome.nautilus
         gnome.gnome-tweaks
         gnome.file-roller
+        gnome.gnome-disk-utility
         gedit
         gimp
         discord
@@ -19,6 +20,7 @@
         vlc
         orca-slicer
         godot_4
+        pavucontrol
 
         # CLI packages
         usbutils
