@@ -44,6 +44,9 @@
         "org/gnome/desktop/wm/keybindings" = {
             switch-windows = [ "<Alt>Tab" ];
             switch-windows-backward = [ "<Shift><Alt>Tab" ];
+            # This just unsets the default switch applications
+            switch-applications = [ "@as []" ];
+            switch-applications-backward = [ "@as []" ];
         };
         "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,maximize,close";
     };
