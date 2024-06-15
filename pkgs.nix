@@ -42,6 +42,5 @@
         ntfs3g
         monitor
     ];
-    programs.firefox.enable = true;
     programs.chromium.enable = true;
 }
