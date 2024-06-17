@@ -21,6 +21,7 @@
         orca-slicer
         godot_4
         pavucontrol
+        blender
 
         # CLI packages
         usbutils
