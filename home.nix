@@ -5,6 +5,7 @@
         ./programs
         ./games
         ./development
+        ./xdg
         ./dconf.nix
         ./pkgs.nix
     ];
