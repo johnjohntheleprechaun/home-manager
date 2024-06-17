@@ -22,6 +22,7 @@
         godot_4
         pavucontrol
         blender
+        nomacs
 
         # CLI packages
         usbutils
