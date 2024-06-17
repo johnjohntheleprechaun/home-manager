@@ -14,6 +14,7 @@
         extraConfig = {
             init.defaultBranch = "main";
             merge.ff = false;
+            pull.ff = true;
             safe.directory = "/etc/nixos";
         };
     };
