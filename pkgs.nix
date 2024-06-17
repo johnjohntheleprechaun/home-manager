@@ -39,6 +39,7 @@
         awscli2
         python3
         jdk17
+        neovim
 
         # Other shit
         ntfs3g
