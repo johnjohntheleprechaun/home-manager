@@ -4,4 +4,5 @@
     imports = [
         ./web.nix
     ];
+    xdg.mimeApps.enable = true;
 }
