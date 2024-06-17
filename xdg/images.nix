@@ -9,5 +9,6 @@
         "image/tiff" = [ "org.nomacs.ImageLounge.desktop" ];
         "image/webp" = [ "org.nomacs.ImageLounge.desktop" ];
         "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
+        "application/x-xcf" = [ "gimp.desktop" ];
     };
 }
