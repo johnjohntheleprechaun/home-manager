@@ -23,6 +23,8 @@
         pavucontrol
         blender
         nomacs
+        audacity
+        evince
 
         # CLI packages
         usbutils
@@ -31,6 +33,8 @@
         file
         ssh-import-id
         ffmpeg
+        dig
+        openssl
 
         # Development packages
         nodejs_20
