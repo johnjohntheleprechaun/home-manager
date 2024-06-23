@@ -9,7 +9,8 @@
             hist = "log --graph";
             cam = "commit -am";
             cm = "commit -m";
-            c = "commit";
+            ca = "commit --amend";
+            can = "commit --amend --no-edit";
         };
         extraConfig = {
             init.defaultBranch = "main";
