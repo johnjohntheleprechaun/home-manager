@@ -6,5 +6,6 @@
         ./bash.nix
         ./git.nix
         ./vscode
+        ./neovim
     ];
 }
