@@ -35,6 +35,7 @@
         ffmpeg
         dig
         openssl
+        binutils
 
         # Development packages
         nodejs_20
@@ -43,6 +44,7 @@
         awscli2
         python3
         jdk17
+        sshfs
 
         # Other shit
         ntfs3g
