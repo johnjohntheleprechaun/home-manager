@@ -7,5 +7,6 @@
         ./git.nix
         ./vscode
         ./neovim
+        ./tmux
     ];
 }
