@@ -35,6 +35,7 @@
         ffmpeg
         dig
         openssl
+        tmux
 
         # Development packages
         nodejs_20

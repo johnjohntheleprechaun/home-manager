@@ -1,0 +1,4 @@
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+inoremap <silent><expr> <S-TAB> coc#refresh()
+
+nmap <leader>rn <Plug>(coc-rename)

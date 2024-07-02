@@ -3,6 +3,14 @@
 {
     programs.neovim = {
         enable = true;
-        extraConfig = builtins.readFile ./init.vim;
+        extraConfig = builtins.readFile ./init.nvim;
+        plugins = with pkgs.vimPlugins; [
+            {
+                plugin = coc-nvim;
+                config = builtins.readFile ./coc.nvim;
+            }
+            coc-tsserver
+            coc-tslint-plugin
+        ];
     };
 }
