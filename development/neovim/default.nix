@@ -13,7 +13,7 @@
             coc-tslint-plugin
             {
                 plugin = gitsigns-nvim;
-                config = builtins.readFile ./gitsigns.lua;
+                config = builtins.readFile ./gitsigns.nvim;
             }
         ];
     };

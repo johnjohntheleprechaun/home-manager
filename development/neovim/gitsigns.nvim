@@ -1,0 +1,5 @@
+hi DiffAdd guifg=Green guibg=NONE
+hi DiffChange guifg=Aqua guibg=NONE
+lua << END
+require('gitsigns').setup(asd)
+END

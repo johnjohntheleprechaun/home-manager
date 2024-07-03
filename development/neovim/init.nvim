@@ -1,3 +1,5 @@
 set tabstop=4 shiftwidth=4 expandtab
 set number
 set signcolumn=yes
+set termguicolors
+hi SignColumn guibg=NONE guifg=NONE
