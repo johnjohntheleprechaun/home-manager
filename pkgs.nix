@@ -7,6 +7,8 @@
         gnomeExtensions.appindicator
 
         # Graphical applications
+        aws-sam-cli
+        zoom-us
         gnome.gnome-terminal
         gnome.nautilus
         gnome.gnome-tweaks
