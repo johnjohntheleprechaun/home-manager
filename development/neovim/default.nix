@@ -3,18 +3,26 @@
 {
     programs.neovim = {
         enable = true;
+        defaultEditor = true;
         extraConfig = builtins.readFile ./init.nvim;
+        coc = {
+            enable = true;
+            pluginConfig = builtins.readFile ./coc.nvim;
+            settings = builtins.fromJSON (builtins.readFile ./coc-settings.json);
+        };
         plugins = with pkgs.vimPlugins; [
-            {
-                plugin = coc-nvim;
-                config = builtins.readFile ./coc.nvim;
-            }
+            # CoC plugins
             coc-tsserver
-            coc-tslint-plugin
+            coc-eslint
+            coc-highlight
+            coc-json
+
+            # other plugins
             {
                 plugin = gitsigns-nvim;
                 config = builtins.readFile ./gitsigns.nvim;
             }
+            nvim-autopairs
         ];
     };
 }
