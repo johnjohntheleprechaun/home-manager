@@ -7,10 +7,17 @@
         userEmail = "john@jorgensenfamily.us";
         aliases = {
             hist = "log --graph";
+            stat = "status";
+            ap = "add -p";
+            # commit types
+            cap = "!f(){ git add -p && git commit; };f";
+            camp = "!f(){ git add -p && git commit -m \"$1\"; };f";
             cam = "commit -am";
             cm = "commit -m";
             ca = "commit --amend";
+            caa = "commit -a --amend";
             can = "commit --amend --no-edit";
+            caan = "commait -a --amend --no-edit";
         };
         extraConfig = {
             init.defaultBranch = "main";
