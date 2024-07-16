@@ -3,6 +3,7 @@ set nowrap
 set number
 set signcolumn=yes
 set termguicolors
+set mouse=
 colorscheme dracula
 
 lua << END
