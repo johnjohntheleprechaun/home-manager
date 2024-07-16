@@ -9,5 +9,6 @@
         ./vscode
         ./neovim
         ./tmux
+        ./ssh.nix
     ];
 }
