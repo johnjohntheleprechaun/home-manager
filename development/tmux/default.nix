@@ -9,5 +9,11 @@
         keyMode = "vi";
         terminal = "screen-256color";
         extraConfig = builtins.readFile ./extra.conf;
+        plugins = with pkgs.tmuxPlugins; [
+            {
+                plugin = dracula;
+                extraConfig = builtins.readFile ./dracula.conf;
+            }
+        ];
     };
 }

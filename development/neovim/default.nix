@@ -17,6 +17,9 @@
             coc-highlight
             coc-json
 
+            # themes
+            dracula-nvim
+
             # other plugins
             {
                 plugin = gitsigns-nvim;
