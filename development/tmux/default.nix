@@ -8,6 +8,7 @@
         baseIndex = 1;
         keyMode = "vi";
         terminal = "screen-256color";
+        newSession = true;
         extraConfig = builtins.readFile ./extra.conf;
         plugins = with pkgs.tmuxPlugins; [
             {
