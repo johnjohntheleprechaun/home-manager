@@ -25,6 +25,13 @@
                 plugin = gitsigns-nvim;
                 config = builtins.readFile ./gitsigns.nvim;
             }
+            {
+                plugin = nvim-tree-lua;
+                config = builtins.readFile ./tree.nvim;
+            }
+            {
+                plugin = nvim-web-devicons;
+            }
             nvim-autopairs
         ];
     };
