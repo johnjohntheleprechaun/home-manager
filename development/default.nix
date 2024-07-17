@@ -10,6 +10,7 @@
         ./neovim
         ./tmux
         ./ssh.nix
+        ./kitty
     ];
 
     fonts.fontconfig.enable = true;
