@@ -5,3 +5,5 @@ vim.g.loaded_netrwPlugin = 1
 -- basic setup
 require("nvim-tree").setup()
 END
+
+nnoremap <silent> <F12> :NvimTreeFocus<CR>
