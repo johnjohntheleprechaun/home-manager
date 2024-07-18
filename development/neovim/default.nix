@@ -32,7 +32,10 @@
             {
                 plugin = nvim-web-devicons;
             }
-            nvim-autopairs
+            {
+                plugin = nvim-autopairs;
+                config = "lua << END\nrequire('nvim-autopairs').setup{}\nEND";
+            }
         ];
     };
 }

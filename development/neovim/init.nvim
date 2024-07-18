@@ -5,7 +5,3 @@ set signcolumn=yes
 set termguicolors
 set mouse=
 colorscheme dracula
-
-lua << END
-require("nvim-autopairs").setup{}
-END
