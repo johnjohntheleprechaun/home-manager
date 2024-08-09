@@ -16,6 +16,8 @@
             coc-eslint
             coc-highlight
             coc-json
+            coc-html
+            coc-css
 
             # themes
             dracula-nvim
