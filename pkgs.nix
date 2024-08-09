@@ -38,6 +38,9 @@
         dig
         openssl
         binutils
+        (spotify-player.override {
+            withSixel = true;
+        })
 
         # Development packages
         nodejs_20
