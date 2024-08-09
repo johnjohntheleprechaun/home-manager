@@ -7,3 +7,13 @@ require("nvim-tree").setup()
 END
 
 nnoremap <silent> <F12> :NvimTreeFocus<CR>
+
+
+" Automatically open nvim-tree when Neovim starts
+autocmd VimEnter * NvimTreeOpen
+
+" Automatically open nvim-tree in a new tab
+autocmd TabNewEntered * NvimTreeOpen
+
+" Optional: Close Neovim if nvim-tree is the only open buffer
+autocmd BufEnter * if winnr('$') == 1 && &filetype == 'NvimTree' | quit | endif
