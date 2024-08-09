@@ -41,6 +41,7 @@
         (spotify-player.override {
             withSixel = true;
         })
+        jq
 
         # Development packages
         nodejs_20
