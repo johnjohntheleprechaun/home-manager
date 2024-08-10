@@ -22,6 +22,13 @@
                 port = 33200;
                 user = "pi";
             };
+            "router" = {
+                hostname = "openwrt.lan";
+                user = "root";
+            };
+        };
+        extraOptionOverrides = {
+            EnableEscapeCommandline = "true";
         };
     };
 }
