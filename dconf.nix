@@ -15,7 +15,7 @@
             "org.gnome.Terminal.desktop"
             "org.gnome.Nautilus.desktop"
             "spotify.desktop"
-            "code.desktop"
+            "steam.desktop"
             "discord.desktop"
         ];
         "org/gnome/shell/extensions/dash-to-dock" = {
