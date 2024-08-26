@@ -50,7 +50,7 @@
         nodePackages.http-server
         awscli2
         python3
-        jdk17
+        jdk21
         sshfs
         glib
 
