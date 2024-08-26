@@ -42,6 +42,7 @@
             withSixel = true;
         })
         jq
+        trash-cli
 
         # Development packages
         nodejs_20
@@ -51,6 +52,7 @@
         python3
         jdk17
         sshfs
+        glib
 
         # Other shit
         ntfs3g
