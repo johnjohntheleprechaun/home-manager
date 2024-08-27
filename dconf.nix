@@ -12,7 +12,7 @@
         # "org/gnome/shell".app-picker-layout
         "org/gnome/shell".favorite-apps = [
             "firefox.desktop"
-            "org.gnome.Terminal.desktop"
+            "kitty.desktop"
             "org.gnome.Nautilus.desktop"
             "spotify.desktop"
             "steam.desktop"
