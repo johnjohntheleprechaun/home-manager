@@ -7,6 +7,7 @@
         gnomeExtensions.appindicator
 
         # Graphical applications
+        yubikey-manager-qt
         aws-sam-cli
         zoom-us
         gnome.gnome-terminal
