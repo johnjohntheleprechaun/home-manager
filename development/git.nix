@@ -1,10 +1,20 @@
 { config, pkgs, ... }:
 
 {
+    programs.gpg = {
+        enable = true;
+        settings = {
+            "pinentry-mode" = "loopback";
+        };
+    };
     programs.git = {
         enable = true;
         userName = "John Jorgensen";
-        userEmail = "john@jorgensenfamily.us";
+        userEmail = "john@leprechaun.dev";
+        signing = {
+            signByDefault = true;
+            key = null;
+        };
         aliases = {
             hist = "log --graph";
             stat = "status";

@@ -16,4 +16,18 @@
             sso_registration_scopes = "sso:account:access";
         };
     };
+    systemd.user.services.awsDockerFix = {
+        Unit = {
+            Description = "Simple fix for aws docker shit";
+            After = "default.target";
+        };
+        Service = {
+            Type = "oneshot";
+            ExecStart = "/run/current-system/sw/bin/docker run --rm --privileged multiarch/qemu-user-static --reset -p yes";
+            RemainAfterExit=true;
+        };
+        Install = {
+            WantedBy = ["default.target"];
+        };
+    };
 }

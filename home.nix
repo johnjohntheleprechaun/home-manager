@@ -20,6 +20,8 @@ in
     home.homeDirectory = "/home/john";
 
     programs.home-manager.enable = true;
+
+    systemd.user.startServices = true;
     
     nixpkgs.config = {
         allowUnfree = true;

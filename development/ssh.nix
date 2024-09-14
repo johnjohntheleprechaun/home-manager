@@ -13,13 +13,13 @@
                 user = "pi";
             };
             "leopard.remote" = {
-                hostname = "castle.jorgensenfamily.us";
-                port = 33201;
+                hostname = "leopard.van-pogona.ts.net";
+                port = 22;
                 user = "john";
             };
             "rpi4.remote" = {
-                hostname = "castle.jorgensenfamily.us";
-                port = 33200;
+                hostname = "johnpi.van-pogona.ts.net";
+                port = 22;
                 user = "pi";
             };
             "router" = {

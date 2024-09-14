@@ -7,6 +7,7 @@
         gnomeExtensions.appindicator
 
         # Graphical applications
+        yubikey-manager-qt
         aws-sam-cli
         zoom-us
         gnome.gnome-terminal
@@ -42,6 +43,7 @@
             withSixel = true;
         })
         jq
+        trash-cli
 
         # Development packages
         nodejs_20
@@ -49,8 +51,9 @@
         nodePackages.http-server
         awscli2
         python3
-        jdk17
+        jdk21
         sshfs
+        glib
 
         # Other shit
         ntfs3g
