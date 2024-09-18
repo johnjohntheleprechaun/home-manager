@@ -29,7 +29,11 @@
             }
             {
                 plugin = nvim-tree-lua;
-                config = builtins.readFile ./tree.nvim;
+                config = ''
+                    lua << END
+                    ${builtins.readFile ./tree.lua}
+                    END
+                '';
             }
             {
                 plugin = nvim-web-devicons;
