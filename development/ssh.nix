@@ -32,6 +32,11 @@ in
                 port = 22;
                 user = "pi";
             } // tmuxCommand;
+            "noduh.mc" = {
+                hostname = "mc.noduh.dev";
+                port = 1822;
+                user = "noduh";
+            } // tmuxCommand;
         };
         extraOptionOverrides = {
             EnableEscapeCommandline = "true";
