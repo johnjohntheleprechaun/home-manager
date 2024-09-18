@@ -32,10 +32,6 @@ in
                 port = 22;
                 user = "pi";
             } // tmuxCommand;
-            "router" = {
-                hostname = "openwrt.lan";
-                user = "root";
-            };
         };
         extraOptionOverrides = {
             EnableEscapeCommandline = "true";
