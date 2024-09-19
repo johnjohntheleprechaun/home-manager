@@ -4,10 +4,10 @@
     programs.neovim = {
         enable = true;
         defaultEditor = true;
-        extraConfig = builtins.readFile ./init.nvim;
+        extraConfig = builtins.readFile ./init.vim;
         coc = {
             enable = true;
-            pluginConfig = builtins.readFile ./coc.nvim;
+            pluginConfig = builtins.readFile ./coc.vim;
             settings = builtins.fromJSON (builtins.readFile ./coc-settings.json);
         };
         plugins = with pkgs.vimPlugins; [
@@ -25,11 +25,15 @@
             # other plugins
             {
                 plugin = gitsigns-nvim;
-                config = builtins.readFile ./gitsigns.nvim;
+                config = builtins.readFile ./gitsigns.vim;
             }
             {
                 plugin = nvim-tree-lua;
-                config = builtins.readFile ./tree.nvim;
+                config = ''
+                    lua << END
+                    ${builtins.readFile ./tree.lua}
+                    END
+                '';
             }
             {
                 plugin = nvim-web-devicons;

@@ -18,7 +18,6 @@
         gedit
         gimp
         discord
-        spotify
         chromium
         vlc
         orca-slicer
@@ -39,9 +38,6 @@
         dig
         openssl
         binutils
-        (spotify-player.override {
-            withSixel = true;
-        })
         jq
         trash-cli
 

@@ -23,7 +23,6 @@ in
                 "firefox.desktop"
                 "kitty.desktop"
                 "org.gnome.Nautilus.desktop"
-                "spotify.desktop"
                 "steam.desktop"
                 "discord.desktop"
             ];
