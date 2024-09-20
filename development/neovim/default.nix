@@ -18,6 +18,8 @@
             coc-json
             coc-html
             coc-css
+            coc-vimlsp
+            coc-snippets
 
             # themes
             dracula-nvim
