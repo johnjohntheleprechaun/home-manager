@@ -4,7 +4,7 @@ let
     tmuxCommand = {
         extraOptions = {
             # automatically launch TMUX if it exists
-            RemoteCommand = "bash -l -c '(tmux attach-session || tmux new-session)'";
+            RemoteCommand = "bash -l -c 'tmux attach-session || tmux new-session'";
             RequestTTY = "yes";
             SetEnv = "TERM=xterm-256color";
         };
