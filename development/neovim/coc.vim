@@ -4,7 +4,7 @@ nmap <silent> <F2> <Plug>(coc-rename)
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 inoremap <silent><expr> <Tab>
-  \ coc#pum#visible() ? coc#pum#confirm() :
+  \ coc#pum#visible() ? coc#pum#next(1) :
   \ coc#expandableOrJumpable() ? "\<C-r>=coc#snippet#next()\<CR>" :
   \ "\<Tab>"
 
@@ -12,3 +12,5 @@ inoremap <silent><expr> <S-Tab>
   \ coc#pum#visible() ? coc#pum#prev(1) :
   \ coc#expandableOrJumpable() ? "\<C-r>=coc#snippet#prev()\<CR>" :
   \ "\<S-Tab>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
