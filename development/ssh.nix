@@ -35,8 +35,18 @@ in
             "noduh.mc" = {
                 hostname = "mc.noduh.dev";
                 port = 1822;
-                user = "noduh";
+                user = "bob";
             } // tmuxCommand;
+            "john.noduh.mc" = {
+                hostname = "mc.noduh.dev";
+                port = 1822;
+                user = "john";
+            } // tmuxCommand;
+            "raw.john.noduh.mc" = {
+                hostname = "mc.noduh.dev";
+                port = 1822;
+                user = "john";
+            };
         };
         extraOptionOverrides = {
             EnableEscapeCommandline = "true";
