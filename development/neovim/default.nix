@@ -44,6 +44,10 @@
                 plugin = nvim-autopairs;
                 config = "lua << END\nrequire('nvim-autopairs').setup{}\nEND";
             }
+            {
+                plugin = vim-pencil;
+                config = builtins.readFile ./pencil.vim;
+            }
         ];
     };
 }
