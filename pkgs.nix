@@ -22,7 +22,6 @@
         vlc
         orca-slicer
         godot_4
-        pavucontrol
         blender
         nomacs
         audacity

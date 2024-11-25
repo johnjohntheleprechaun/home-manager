@@ -18,6 +18,10 @@
             coc-json
             coc-html
             coc-css
+            coc-vimlsp
+            coc-snippets
+            coc-pyright
+            coc-lua
 
             # themes
             dracula-nvim
@@ -41,6 +45,10 @@
             {
                 plugin = nvim-autopairs;
                 config = "lua << END\nrequire('nvim-autopairs').setup{}\nEND";
+            }
+            {
+                plugin = vim-pencil;
+                config = builtins.readFile ./pencil.vim;
             }
         ];
     };
