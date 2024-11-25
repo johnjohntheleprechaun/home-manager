@@ -20,6 +20,8 @@
             coc-css
             coc-vimlsp
             coc-snippets
+            coc-pyright
+            coc-lua
 
             # themes
             dracula-nvim
