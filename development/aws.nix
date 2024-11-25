@@ -30,4 +30,7 @@
             WantedBy = ["default.target"];
         };
     };
+    home.packages = with pkgs; [
+        localstack
+    ];
 }
