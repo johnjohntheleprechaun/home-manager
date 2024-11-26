@@ -18,13 +18,4 @@
         "image/svg+xml" = [ "org.nomacs.ImageLounge.desktop" ];
         "application/x-xcf" = [ "gimp.desktop" ];
     };
-
-    programs.bash.initExtra = ''
-        export PATH="$HOME/.local/bin:$PATH"
-    '';
-    home.file.".local/bin/xdg-open" = {
-        source = ./wsl.sh;
-        executable = true;
-    };
-    home.packages = [ pkgs.wslu ];
 }
