@@ -4,7 +4,7 @@ let
     tmuxCommand = {
         extraOptions = {
             # automatically launch TMUX if it exists
-            RemoteCommand = "bash -l -c '(tmux attach-session || tmux new-session)'";
+            RemoteCommand = "bash -l -c 'tmux attach-session || tmux new-session'";
             RequestTTY = "yes";
             SetEnv = "TERM=xterm-256color";
         };
@@ -35,8 +35,18 @@ in
             "noduh.mc" = {
                 hostname = "mc.noduh.dev";
                 port = 1822;
-                user = "noduh";
+                user = "bob";
             } // tmuxCommand;
+            "john.noduh.mc" = {
+                hostname = "mc.noduh.dev";
+                port = 1822;
+                user = "john";
+            } // tmuxCommand;
+            "raw.john.noduh.mc" = {
+                hostname = "mc.noduh.dev";
+                port = 1822;
+                user = "john";
+            };
         };
         extraOptionOverrides = {
             EnableEscapeCommandline = "true";

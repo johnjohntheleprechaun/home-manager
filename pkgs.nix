@@ -46,6 +46,7 @@
         nodePackages.http-server
         awscli2
         python3
+        python311Packages.pip
         jdk21
         sshfs
         glib
