@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+    unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
     imports = [
         ./aws.nix
@@ -16,5 +19,6 @@
     fonts.fontconfig.enable = true;
     home.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "AurulentSansMono" ]; })
+        unstable.uv
     ];
 }
