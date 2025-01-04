@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+    home.packages = with pkgs; [
+        glib
+        gvfs
+    ];
     programs.neovim = {
         enable = true;
         defaultEditor = true;
