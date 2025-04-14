@@ -27,7 +27,7 @@
             ca = "commit --amend";
             caa = "commit -a --amend";
             can = "commit --amend --no-edit";
-            caan = "commait -a --amend --no-edit";
+            caan = "commit -a --amend --no-edit";
         };
         extraConfig = {
             init.defaultBranch = "main";
