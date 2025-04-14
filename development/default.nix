@@ -9,7 +9,6 @@ in
         ./bash.nix
         ./git.nix
         ./gnome-terminal.nix
-        ./vscode
         ./neovim
         ./tmux
         ./ssh.nix
