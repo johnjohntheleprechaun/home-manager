@@ -11,7 +11,7 @@ in
         ./gnome-terminal.nix
         ./neovim
         ./tmux
-        ./ssh.nix
+        ./ssh
         ./kitty
     ];
 
