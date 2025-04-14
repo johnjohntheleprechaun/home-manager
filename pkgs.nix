@@ -10,7 +10,6 @@
         yubikey-manager-qt
         aws-sam-cli
         zoom-us
-        gnome.gnome-terminal
         gnome.nautilus
         gnome.gnome-tweaks
         gnome.file-roller
@@ -39,6 +38,9 @@
         binutils
         jq
         trash-cli
+        rclone
+        mitmproxy
+        smartmontools
 
         # Development packages
         nodejs_20
