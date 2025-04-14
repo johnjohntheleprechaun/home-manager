@@ -3,5 +3,13 @@
     "semanticTokens.enable": true,
     "eslint.autoFixOnSave": true,
     "typescript.suggest.autoImports": true,
-    "javascript.suggest.autoImports": true
+    "javascript.suggest.autoImports": true,
+    "html.filetypes": [
+        "html",
+        "handlebars",
+        "htmldjango",
+        "blade"
+    ],
+    "html.format.templating": true,
+    "html.format.indentHandlebars": true
 }
