@@ -16,9 +16,11 @@
             key = null;
         };
         aliases = {
-            hist = "log --graph";
+            hist = "log --graph --stat";
             stat = "status";
+            a = "add";
             ap = "add -p";
+            bdiff = "diff --stat";
             # commit types
             cap = "!f(){ git add -p && git commit; };f";
             camp = "!f(){ git add -p && git commit -m \"$1\"; };f";
