@@ -1,5 +1,17 @@
 -- Enable LSPs, configured lower in the file
-vim.lsp.enable({ "ts_ls", "html", "lua_ls", "nixd" });
+vim.lsp.enable({ "ts_ls", "html", "lua_ls", "nixd", "cssls", "jsonls", "bashls", "yamlls", "eslint" })
+local null_ls = require("null-ls")
+local sources = {
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.alejandra,
+    null_ls.builtins.formatting.stylua.with({
+        extra_args = { "--indent-type", "Spaces" },
+    }),
+    null_ls.builtins.formatting.shfmt.with({
+        extra_args = { "-i", "4", "-ci" },
+    }),
+    null_ls.builtins.formatting.yamlfmt,
+}
 
 -- show diagnostics
 vim.o.updatetime = 250
@@ -19,7 +31,7 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
         local diagnostic = vim.diagnostic.get(0, {
             lnum = line,
         })
-        if #diagnostic > 0 then
+        if #diagnostic > 0 and vim.api.nvim_get_mode().mode ~= "i" then
             vim.diagnostic.open_float(nil, float_opts)
         end
     end,
@@ -28,15 +40,22 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-vim.lsp.config("alejandra", {
-
+vim.lsp.config("jsonls", {
+    capabilities = capabilities,
 })
 vim.lsp.config("html", {
     provideFormatter = false,
-    capabilities = capabilities
+    capabilities = capabilities,
 })
 vim.lsp.config("cssls", {
     capabilities = capabilities,
+})
+vim.lsp.config("nixd", {
+    settings = {
+        formatting = {
+            command = "alejandra",
+        },
+    },
 })
 vim.lsp.config("lua_ls", {
     on_init = function(client)
@@ -66,12 +85,12 @@ vim.lsp.config("lua_ls", {
             workspace = {
                 checkThirdParty = false,
                 library = {
-                    vim.env.VIMRUNTIME
+                    vim.env.VIMRUNTIME,
                     -- Depending on the usage, you might want to add additional paths
                     -- here.
                     -- "${3rd}/luv/library"
                     -- "${3rd}/busted/library"
-                }
+                },
                 -- Or pull in all of "runtimepath".
                 -- NOTE: this is a lot slower and will cause issues when working on
                 -- your own configuration.
@@ -79,12 +98,12 @@ vim.lsp.config("lua_ls", {
                 -- library = {
                 --   vim.api.nvim_get_runtime_file("", true),
                 -- }
-            }
+            },
         })
     end,
     settings = {
-        Lua = {}
-    }
+        Lua = {},
+    },
 })
 
 -- Autocompletion
@@ -108,14 +127,9 @@ cmp.setup({
 })
 
 -- Formatter / Linter via none-ls
-local null_ls = require("null-ls")
 vim.api.nvim_create_augroup("LspFormatting", { clear = true })
 null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.alejandra,
-    },
-
+    sources = sources,
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = "LspFormatting", buffer = bufnr })
@@ -123,9 +137,14 @@ null_ls.setup({
                 group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
+                    vim.lsp.buf.format({
+                        bufnr = bufnr,
+                        filter = function(format_client)
+                            return format_client.name == "null-ls"
+                        end,
+                    })
                 end,
             })
         end
-    end
+    end,
 })

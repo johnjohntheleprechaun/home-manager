@@ -1,17 +1,32 @@
-{pkgs, ...}: let
-  unstable = import <nixos-unstable> {config = {allowUnfree = true;};};
-in {
+{ pkgs, ... }:
+let
+  unstable = import <nixos-unstable> {
+    config = {
+      allowUnfree = true;
+    };
+  };
+in
+{
   home.packages = with pkgs; [
     glib
     gvfs
     nodejs
-    prettierd
+
+    # language servers
     eslint_d
     typescript-language-server
     vscode-langservers-extracted
     lua-language-server
     nixd
+    bash-language-server
+    yaml-language-server
+
+    # Formatting
+    prettierd
     alejandra
+    stylua
+    shfmt
+    yamlfmt
   ];
   programs.neovim = {
     enable = true;
@@ -19,6 +34,17 @@ in {
     defaultEditor = true;
     extraLuaConfig = builtins.readFile ./init.lua;
     plugins = with unstable.vimPlugins; [
+      # tree-sitter and langs
+      nvim-treesitter
+      nvim-treesitter-parsers.typescript
+      nvim-treesitter-parsers.bash
+      nvim-treesitter-parsers.lua
+      nvim-treesitter-parsers.nix
+      nvim-treesitter-parsers.html
+      nvim-treesitter-parsers.css
+      nvim-treesitter-parsers.json
+      nvim-treesitter-parsers.javascript
+
       # code completion
       {
         plugin = nvim-lspconfig;
