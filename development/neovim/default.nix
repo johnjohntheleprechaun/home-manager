@@ -1,15 +1,14 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   unstable = import <nixos-unstable> {
     config = {
       allowUnfree = true;
     };
   };
-in
-{
+in {
   home.packages = with pkgs; [
     glib
     gvfs
+    gcc
     nodejs
 
     # language servers
@@ -35,7 +34,14 @@ in
     extraLuaConfig = builtins.readFile ./init.lua;
     plugins = with unstable.vimPlugins; [
       # tree-sitter and langs
-      nvim-treesitter
+      {
+        plugin = nvim-treesitter;
+        config = ''
+          lua << END
+          ${builtins.readFile ./treesitter.lua}
+          END
+        '';
+      }
       nvim-treesitter-parsers.typescript
       nvim-treesitter-parsers.bash
       nvim-treesitter-parsers.lua
