@@ -11,8 +11,8 @@ require("nvim-tree").setup {
     view = {float = {
         enable = true,
         open_win_config = function()
-            local width = vim.api.nvim_get_option("columns")
-            local height = vim.api.nvim_get_option("lines")
+            local width = vim.api.nvim_win_get_width(0)
+            local height = vim.api.nvim_win_get_height(0)
             local win_width = 40
             local win_height = height - 6
 
@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = function()
 end})
 
 -- open and close
-function close_nvim_tree_if_open()
+function Close_Nvim_Tree_If_Open()
     local view = require("nvim-tree.view")
     if view.is_visible() then
         vim.cmd("NvimTreeClose")
@@ -43,4 +43,4 @@ function close_nvim_tree_if_open()
 end
 
 vim.api.nvim_set_keymap("n", "<F12>", ":NvimTreeOpen<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Esc>", ":lua close_nvim_tree_if_open()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Esc>", ":lua Close_Nvim_Tree_If_Open()<CR>", { noremap = true, silent = true })
