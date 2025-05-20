@@ -1,5 +1,15 @@
 -- Enable LSPs, configured lower in the file
-vim.lsp.enable({ "ts_ls", "html", "lua_ls", "nixd", "cssls", "jsonls", "bashls", "yamlls", "eslint" })
+vim.lsp.enable({
+    "ts_ls",
+    "html",
+    "lua_ls",
+    "nixd",
+    "cssls",
+    "jsonls",
+    "bashls",
+    "yamlls",
+    "eslint",
+})
 local null_ls = require("null-ls")
 local sources = {
     null_ls.builtins.formatting.prettierd,
@@ -127,14 +137,13 @@ cmp.setup({
 })
 
 -- Formatter / Linter via none-ls
-vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+local formatting_group = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = sources,
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_clear_autocmds({ group = "LspFormatting", buffer = bufnr })
             vim.api.nvim_create_autocmd("BufWritePre", {
-                group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
+                group = formatting_group,
                 buffer = bufnr,
                 callback = function()
                     vim.lsp.buf.format({
