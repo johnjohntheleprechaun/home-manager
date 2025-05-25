@@ -23,3 +23,18 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.spelllang = "en_us"
     end,
 })
+
+-- Clipboard
+vim.g.clipboard = "osc52"
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        if vim.v.event.operator == "y" then
+            local yanked = vim.fn.getreg('"')
+            local encoded = vim.fn.system("base64", yanked)
+            local esc = string.char(27)
+            local bel = string.char(7)
+            local osc52 = string.format("%s]52;c;%s%s", esc, encoded:gsub("\n", ""), bel)
+            vim.api.nvim_chan_send(vim.v.stderr, osc52)
+        end
+    end,
+})
