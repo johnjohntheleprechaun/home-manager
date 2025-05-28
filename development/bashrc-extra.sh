@@ -12,3 +12,5 @@ fi
 
 # fix the browser crap from the python webbrowser lib
 export BROWSER="wslview %s"
+
+alias ls="ls --color"
