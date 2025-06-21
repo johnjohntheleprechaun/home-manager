@@ -9,6 +9,7 @@
     gnomeExtensions.appindicator
 
     # Graphical applications
+    tidal-hifi
     yubioath-flutter
     aws-sam-cli
     zoom-us
