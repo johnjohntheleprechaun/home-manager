@@ -9,6 +9,7 @@ vim.lsp.enable({
     "bashls",
     "yamlls",
     "eslint",
+    "pyright",
 })
 local null_ls = require("null-ls")
 local sources = {
@@ -21,6 +22,7 @@ local sources = {
         extra_args = { "-i", "4", "-ci" },
     }),
     null_ls.builtins.formatting.yamlfmt,
+    null_ls.builtins.formatting.black,
 }
 
 -- show diagnostics

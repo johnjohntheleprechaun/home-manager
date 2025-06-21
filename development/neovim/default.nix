@@ -19,6 +19,7 @@ in {
     nixd
     bash-language-server
     yaml-language-server
+    pyright
 
     # Formatting
     prettierd
@@ -26,6 +27,7 @@ in {
     stylua
     shfmt
     yamlfmt
+    black
   ];
   programs.neovim = {
     enable = true;
