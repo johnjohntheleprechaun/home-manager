@@ -23,6 +23,7 @@
       a = "add";
       ap = "add -p";
       bdiff = "diff --stat";
+      inspect = "!f(){ git diff \"$1\"^!; }; f";
       # commit types
       cap = "!f(){ git add -p && git commit; };f";
       camp = "!f(){ git add -p && git commit -m \"$1\"; };f";
