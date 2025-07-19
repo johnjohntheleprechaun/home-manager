@@ -44,6 +44,8 @@
     rclone
     mitmproxy
     smartmontools
+    rar
+    htop-vim
 
     # Other shit
     ntfs3g
