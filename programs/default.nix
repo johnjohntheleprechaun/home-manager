@@ -1,7 +1,8 @@
 {
-    imports = [
-        ./firefox.nix
-        ./office.nix
-        ./rclone.nix
-    ];
+  imports = [
+    ./firefox.nix
+    ./office.nix
+    ./rclone.nix
+    ./obs.nix
+  ];
 }
