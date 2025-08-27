@@ -1,5 +1,7 @@
-{pkgs, ...}: let
-  unstable = import <nixos-unstable> {
+{pkgs, config, ...}: let
+  unstable = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+  }) {
     config = {
       allowUnfree = true;
     };
