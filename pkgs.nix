@@ -49,6 +49,8 @@
 
     # Other shit
     ntfs3g
+    exfatprogs
+    iotop
   ];
   programs.chromium.enable = true;
 }
