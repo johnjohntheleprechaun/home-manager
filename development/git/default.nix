@@ -3,11 +3,11 @@
   pkgs,
   ...
 }: let
-  vars = import ../local/vars.nix;
+  vars = import ../../local/vars.nix;
 in {
-  programs.gpg = {
+  home.file.".ssh/allowed_signers" = {
     enable = true;
-    settings = {};
+    source = ./allowed_signers;
   };
   programs.git = {
     enable = true;

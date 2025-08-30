@@ -3,18 +3,19 @@
   pkgs,
   ...
 }: let
-  unstable = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-  }) {
-    config = {
-      allowUnfree = true;
+  unstable =
+    import (builtins.fetchTarball {
+      url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+    }) {
+      config = {
+        allowUnfree = true;
+      };
     };
-  };
 in {
   imports = [
     ./aws.nix
     ./bash.nix
-    ./git.nix
+    ./git
     ./neovim
     ./tmux
     ./ssh
