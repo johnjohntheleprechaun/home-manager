@@ -10,7 +10,4 @@ else
     export PS1="$TEMPLATE_PS1"
 fi
 
-# fix the browser crap from the python webbrowser lib
-export BROWSER="wslview %s"
-
 alias ls="ls --color"
