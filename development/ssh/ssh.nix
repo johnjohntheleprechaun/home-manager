@@ -45,7 +45,7 @@ in {
     };
     extraOptionOverrides = {
       EnableEscapeCommandline = "true";
-      ForwardAgent = "yes";
+      AddKeysToAgent = "yes";
       IdentityFile = localVars.sshKeyPath;
       ControlMaster = "auto";
       ControlPath = "~/.ssh/control:%h:%r";
