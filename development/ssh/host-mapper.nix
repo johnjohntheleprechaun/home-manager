@@ -1,7 +1,6 @@
 hostList: let
   tmuxCommand = {
     extraOptions = {
-      ForwardAgent = "yes";
       # automatically launch TMUX if it exists
       RemoteCommand = "bash -l -c 'tmux attach-session || tmux new-session'";
       RequestTTY = "yes";
