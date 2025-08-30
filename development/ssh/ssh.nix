@@ -4,6 +4,7 @@
   ...
 }: let
   hostMap = import ./host-mapper.nix;
+  localVars = import ../../local/vars.nix;
 in {
   programs.ssh = {
     enable = true;
@@ -44,6 +45,11 @@ in {
     };
     extraOptionOverrides = {
       EnableEscapeCommandline = "true";
+      ForwardAgent = "yes";
+      IdentityFile = localVars.sshKeyPath;
+      ControlMaster = "auto";
+      ControlPath = "~/.ssh/control:%h:%r";
+      ControlPersist = "10m";
     };
   };
 }

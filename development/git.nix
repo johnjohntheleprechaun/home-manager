@@ -2,12 +2,12 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  vars = import ../local/vars.nix;
+in {
   programs.gpg = {
     enable = true;
-    settings = {
-      "pinentry-mode" = "loopback";
-    };
+    settings = {};
   };
   programs.git = {
     enable = true;
@@ -15,7 +15,7 @@
     userEmail = "john@leprechaun.dev";
     signing = {
       signByDefault = true;
-      key = null;
+      key = vars.sshKeyPath;
     };
     aliases = {
       hist = "log --graph --stat";
@@ -39,6 +39,10 @@
       merge.ff = false;
       pull.ff = "only";
       safe.directory = "/etc/nixos";
+      gpg = {
+        format = "ssh";
+        ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      };
     };
   };
 }
