@@ -45,11 +45,12 @@ in {
     };
     extraOptionOverrides = {
       EnableEscapeCommandline = "true";
-      AddKeysToAgent = "yes";
+      AddKeysToAgent = "no";
       IdentityFile = localVars.sshKeyPath;
       ControlMaster = "auto";
-      ControlPath = "~/.ssh/control:%h:%r";
+      ControlPath = "~/.ssh/control/%h:%r";
       ControlPersist = "10m";
     };
   };
+  home.file.".ssh/control/.keep".text = "can't create a directory without creating a file :/";
 }
