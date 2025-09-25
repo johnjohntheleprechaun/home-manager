@@ -9,6 +9,7 @@
     gnomeExtensions.appindicator
 
     # Graphical applications
+    mumble
     tidal-hifi
     yubioath-flutter
     aws-sam-cli
@@ -30,6 +31,9 @@
     evince
 
     # CLI packages
+    croc
+    s-tui
+    stress
     usbutils
     zip
     unzip
