@@ -1,4 +1,5 @@
--- Enable LSPs, configured lower in the file
+-- Enable LSPs, configured lower in the file (https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)
+-- Formatting etc listed at https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 vim.lsp.enable({
     "ts_ls",
     "html",
@@ -10,6 +11,7 @@ vim.lsp.enable({
     "yamlls",
     "eslint",
     "pyright",
+    "rust_analyzer",
 })
 local null_ls = require("null-ls")
 local sources = {
@@ -23,6 +25,15 @@ local sources = {
     }),
     null_ls.builtins.formatting.yamlfmt,
     null_ls.builtins.formatting.black,
+    {
+        name = "rustfmt",
+        method = null_ls.methods.FORMATTING,
+        filetypes = { "rust" },
+        generator = null_ls.formatter({
+            command = "rustfmt",
+            to_stdin = true,
+        }),
+    },
 }
 
 -- show diagnostics
@@ -68,6 +79,9 @@ vim.lsp.config("nixd", {
             command = "alejandra",
         },
     },
+})
+vim.lsp.config("rust_analyzer", {
+    capabilities = capabilities,
 })
 vim.lsp.config("lua_ls", {
     on_init = function(client)

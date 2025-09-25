@@ -38,5 +38,10 @@ in {
     glib
 
     jq
+
+    # rust and rust-adjacent
+    rustc
+    rustfmt
+    cargo
   ];
 }

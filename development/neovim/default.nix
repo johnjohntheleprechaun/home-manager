@@ -22,6 +22,7 @@ in {
     bash-language-server
     yaml-language-server
     pyright
+    rust-analyzer
 
     # Formatting
     prettierd
@@ -30,6 +31,7 @@ in {
     shfmt
     yamlfmt
     black
+    rustfmt
   ];
   programs.neovim = {
     enable = true;
