@@ -1,11 +1,19 @@
-{ config, pkgs, ...}:
-
 {
-    programs.bash = {
-        enable = true;
-        bashrcExtra = builtins.readFile ./bashrc-extra.sh;
+  config,
+  pkgs,
+  ...
+}: {
+  programs.bash = {
+    enable = true;
+    bashrcExtra = builtins.readFile ./bashrc-extra.sh;
+    shellAliases = {
+      "rm" = "trash";
     };
-    home.sessionVariables = {
-        NIX_SHELL_PRESERVE_PROMPT = 1;
-    };
+  };
+  home.packages = with pkgs; [
+    trash-cli
+  ];
+  home.sessionVariables = {
+    NIX_SHELL_PRESERVE_PROMPT = 1;
+  };
 }
