@@ -10,12 +10,13 @@
   };
   draculaConfig = builtins.readFile "${draculaRepo}/dracula.conf" + "\n" + builtins.readFile "${draculaRepo}/diff.conf";
 in {
-  home.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
+  #home.file.".config/kwinrulesrc".source = ./kwinrulesrc;
   programs.kitty = {
     enable = true;
-    font.name = "FiraCode Nerd Font Mono";
+    font = {
+      name = "FiraCode Nerd Font Mono";
+      package = pkgs.nerd-fonts.fira-code;
+    };
     settings = {
       cursor_shape = "block";
       cursor_shape_unfocused = "hollow";
