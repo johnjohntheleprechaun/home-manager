@@ -14,21 +14,18 @@
     yubioath-flutter
     aws-sam-cli
     zoom-us
-    nautilus
-    gnome-tweaks
-    file-roller
-    gnome-disk-utility
-    gedit
     gimp
     discord
     chromium
     vlc
     orca-slicer
+    super-slicer
     godot_4
     blender
     nomacs
     audacity
     evince
+    mumble
 
     # CLI packages
     croc
