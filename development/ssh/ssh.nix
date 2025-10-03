@@ -13,17 +13,17 @@ in {
         hostname = "leopard";
         user = "john";
       };
-      "rpi4.local" = {
-        hostname = "johnpi";
+      "tart.local" = {
+        hostname = "tart";
         user = "pi";
       };
       "leopard.remote" = {
-        hostname = "leopard.van-pogona.ts.net";
+        hostname = "leopard-remote";
         port = 22;
         user = "john";
       };
-      "rpi4.remote" = {
-        hostname = "johnpi.van-pogona.ts.net";
+      "tart.remote" = {
+        hostname = "tart-remote";
         port = 22;
         user = "pi";
       };
