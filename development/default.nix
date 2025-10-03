@@ -22,9 +22,7 @@ in {
     ./kitty
   ];
 
-  fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
-    nerd-fonts.aurulent-sans-mono
     unstable.uv
 
     nodejs_20
