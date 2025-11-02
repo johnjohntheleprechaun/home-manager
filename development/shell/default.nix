@@ -8,8 +8,10 @@
     bashrcExtra = builtins.readFile ./bashrc-extra.sh;
     shellAliases = {
       "rm" = "trash";
+      "ls" = "ls --color";
     };
   };
+
   home.packages = with pkgs; [
     trash-cli
   ];

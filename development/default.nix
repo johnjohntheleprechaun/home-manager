@@ -14,7 +14,7 @@
 in {
   imports = [
     ./aws.nix
-    ./bash.nix
+    ./shell
     ./git
     ./neovim
     ./tmux
