@@ -27,7 +27,7 @@ function set_prompt {
     PROMPT="${TEXT_BOLD}${COLOR_GREEN}[\u@\h:\w]${COLOR_BLUE}${GIT_PROMPT}${COLOR_GREEN} \$${FORMAT_NONE} "
 
     if [[ -n "$IN_NIX_SHELL" ]]; then
-        export PS1="${PRE_PROMPT}   (nix-shell)\n${PROMPT}"
+        export PS1="${PRE_PROMPT} ${COLOR_GREY}(nix shell) \n${PROMPT}"
     else
         export PS1="${PRE_PROMPT}\n${PROMPT}"
     fi
