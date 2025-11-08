@@ -8,6 +8,7 @@ vim.opt.wrap = false
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
+vim.o.winborder = "single"
 
 -- Disable mouse
 vim.opt.mouse = ""

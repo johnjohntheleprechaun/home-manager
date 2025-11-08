@@ -19,7 +19,6 @@ require("nvim-tree").setup({
 
                 return {
                     relative = "editor",
-                    border = "rounded",
                     width = win_width,
                     height = win_height,
                     row = (height - win_height) / 2 - 1,

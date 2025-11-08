@@ -37,28 +37,18 @@ local sources = {
 }
 
 -- show diagnostics
-vim.o.updatetime = 250
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-    callback = function()
-        local float_opts = {
-            focusable = false,
-            close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-            border = "rounded",
-            source = "always",
-            prefix = "",
-            scope = "line",
-        }
-
-        local cursor = vim.api.nvim_win_get_cursor(0)
-        local line = cursor[1] - 1
-        local diagnostic = vim.diagnostic.get(0, {
-            lnum = line,
-        })
-        if #diagnostic > 0 and vim.api.nvim_get_mode().mode ~= "i" then
-            vim.diagnostic.open_float(nil, float_opts)
-        end
-    end,
+vim.diagnostic.config({
+    severity_sort = true,
+    update_in_insert = true,
+    virtual_text = {
+        current_line = false,
+        severity = {
+            min = 2,
+            max = 1,
+        },
+    },
 })
+
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
