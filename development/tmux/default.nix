@@ -7,6 +7,7 @@
     mouse = false;
     keyMode = "vi";
     terminal = "screen-256color";
+    sensibleOnTop = true;
     extraConfig = builtins.readFile ./extra.conf;
     plugins = with pkgs.tmuxPlugins; [
       {
