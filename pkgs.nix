@@ -12,7 +12,6 @@
     mumble
     tidal-hifi
     yubioath-flutter
-    aws-sam-cli
     zoom-us
     gimp
     discord
@@ -28,6 +27,7 @@
     mumble
 
     # CLI packages
+    speedtest-cli
     croc
     s-tui
     stress

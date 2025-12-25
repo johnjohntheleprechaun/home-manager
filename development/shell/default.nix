@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+  };
   programs.bash = {
     enable = true;
     bashrcExtra = builtins.readFile ./bashrc-extra.sh;

@@ -1,12 +1,9 @@
-{pkgs, config, ...}: let
-  unstable = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-  }) {
-    config = {
-      allowUnfree = true;
-    };
-  };
-in {
+{
+  pkgs,
+  config,
+  unstable,
+  ...
+}: {
   home.packages = with pkgs; [
     glib
     gvfs
@@ -79,6 +76,7 @@ in {
 
       # themes
       dracula-nvim
+      catppuccin-nvim
 
       # other plugins
       {

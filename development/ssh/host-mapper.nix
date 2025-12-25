@@ -12,15 +12,15 @@ hostList: let
       ForwardAgent = "yes";
     };
   };
-  pkgs = import <nixpkgs> {};
-  lib = pkgs.lib;
 in
   builtins.listToAttrs (
-    lib.mapAttrsToList (name: value: {
-      name = name + ".raw";
-      value = value // agentForward;
-    })
-    hostList
+    builtins.attrValues (
+      builtins.mapAttrs (name: value: {
+        name = name + ".raw";
+        value = value // agentForward;
+      })
+      hostList
+    )
   )
   // (
     builtins.mapAttrs (name: value: value // agentForward // tmuxCommand) hostList

@@ -4,11 +4,15 @@
   ...
 }: let
   hostMap = import ./host-mapper.nix;
-  localVars = import ../../local/vars.nix;
 in {
   programs.ssh = {
     enable = true;
     matchBlocks = hostMap {
+      "vm.local" = {
+        hostname = "localhost";
+        user = "user";
+        port = 2222;
+      };
       "leopard.local" = {
         hostname = "leopard";
         user = "john";
@@ -46,7 +50,7 @@ in {
     extraOptionOverrides = {
       EnableEscapeCommandline = "true";
       AddKeysToAgent = "no";
-      IdentityFile = localVars.sshKeyPath;
+      IdentityFile = "~/.ssh/main_key";
       ControlMaster = "auto";
       ControlPath = "~/.ssh/control/%h:%r";
       ControlPersist = "10m";
