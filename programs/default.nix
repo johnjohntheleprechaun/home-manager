@@ -4,5 +4,6 @@
     ./office.nix
     ./rclone.nix
     ./obs.nix
+    ./krita
   ];
 }
