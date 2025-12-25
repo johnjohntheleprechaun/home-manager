@@ -7,6 +7,7 @@
 in {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = hostMap {
       "vm.local" = {
         hostname = "localhost";
