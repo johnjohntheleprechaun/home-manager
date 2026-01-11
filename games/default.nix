@@ -1,6 +1,10 @@
-{
-    imports = [
-        ./steam.nix
-        ./minecraft.nix
-    ];
+{pkgs, ...}: {
+  imports = [
+    ./steam.nix
+    ./minecraft.nix
+  ];
+  home.packages = with pkgs; [
+    itch
+    wine # for itch windows support
+  ];
 }

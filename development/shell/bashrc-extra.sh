@@ -32,3 +32,9 @@ function set_prompt {
         export PS1="${PRE_PROMPT}\n${PROMPT}"
     fi
 }
+
+# move the auth sock to .ssh for persistence across sessions
+if [ -n "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+    export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+fi

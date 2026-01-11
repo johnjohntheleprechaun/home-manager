@@ -24,6 +24,8 @@
     jdk21
     sshfs
     glib
+    android-tools
+    scrcpy
 
     jq
   ];

@@ -1,9 +1,8 @@
 {
   imports = [
     ./firefox.nix
-    ./office.nix
-    ./rclone.nix
     ./obs.nix
     ./krita
   ];
+  programs.discord.enable = true;
 }

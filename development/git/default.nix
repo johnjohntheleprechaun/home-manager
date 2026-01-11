@@ -2,9 +2,7 @@
   config,
   pkgs,
   ...
-}: let
-  vars = import ../../local/vars.nix;
-in {
+}: {
   home.file.".ssh/allowed_signers" = {
     enable = true;
     source = ./allowed_signers;
@@ -12,8 +10,8 @@ in {
   programs.git = {
     enable = true;
     settings = {
-      user.name = "John Jorgensen";
-      user.email = "john@leprechaun.dev";
+      user.name = "Juniper Jorgensen";
+      user.email = "juniper@leprechaun.dev";
       alias = {
         hist = "log --graph --stat";
         stat = "status";
@@ -43,7 +41,7 @@ in {
     };
     signing = {
       signByDefault = true;
-      key = "~/.ssh/main_key";
+      key = "key::sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIMPSsEEEa4Rk9rt1taRQLNO5uCKEACraTiGHUDQeSUSpAAAABHNzaDo= ssh:";
     };
   };
 }

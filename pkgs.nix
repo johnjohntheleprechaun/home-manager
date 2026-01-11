@@ -14,7 +14,6 @@
     yubioath-flutter
     zoom-us
     gimp
-    discord
     chromium
     vlc
     orca-slicer
@@ -47,6 +46,9 @@
     smartmontools
     rar
     htop-vim
+    iperf3
+    btrfs-progs
+    yubikey-manager
 
     # Other shit
     ntfs3g

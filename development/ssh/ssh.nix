@@ -9,6 +9,10 @@ in {
     enable = true;
     enableDefaultConfig = false;
     matchBlocks = hostMap {
+      "nas" = {
+        hostname = "tart";
+        user = "nas-admin";
+      };
       "vm.local" = {
         hostname = "localhost";
         user = "user";
@@ -16,21 +20,21 @@ in {
       };
       "leopard.local" = {
         hostname = "leopard";
-        user = "john";
-      };
-      "tart.local" = {
-        hostname = "tart";
-        user = "pi";
+        user = "juniper";
       };
       "leopard.remote" = {
         hostname = "leopard-remote";
         port = 22;
-        user = "john";
+        user = "juniper";
+      };
+      "tart.local" = {
+        hostname = "tart";
+        user = "juniper";
       };
       "tart.remote" = {
         hostname = "tart-remote";
         port = 22;
-        user = "pi";
+        user = "juniper";
       };
       "noduh.mc" = {
         hostname = "mc.noduh.dev";
@@ -50,8 +54,7 @@ in {
     };
     extraOptionOverrides = {
       EnableEscapeCommandline = "true";
-      AddKeysToAgent = "no";
-      IdentityFile = "~/.ssh/main_key";
+      AddKeysToAgent = "yes";
       ControlMaster = "auto";
       ControlPath = "~/.ssh/control/%h:%r";
       ControlPersist = "10m";
